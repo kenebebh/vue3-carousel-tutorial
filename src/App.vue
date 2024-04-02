@@ -26,7 +26,7 @@ import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 
 export default defineComponent({
-  name: "Vue-3Carousel",
+  name: "Vue-3CarouselComponent",
   components: {
     Carousel,
     Slide,
