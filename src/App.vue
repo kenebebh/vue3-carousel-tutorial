@@ -1,14 +1,22 @@
 <template>
-  <Carousel>
-    <Slide v-for="slide in 10" :key="slide">
-      <div class="carousel__item">{{ slide }}</div>
-    </Slide>
+  <div class="container">
+    <Carousel>
+      <Slide v-for="slide in 10" :key="slide">
+        <img
+          class="carousel__item"
+          :src="`https://picsum.photos/500?${slide}`"
+          width="250"
+          height="250"
+          :alt="`Item ${slide}`"
+        />
+      </Slide>
 
-    <template #addons>
-      <Navigation />
-      <Pagination />
-    </template>
-  </Carousel>
+      <template #addons>
+        <Navigation />
+        <Pagination />
+      </template>
+    </Carousel>
+  </div>
 </template>
 
 <script>
@@ -18,7 +26,7 @@ import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 
 export default defineComponent({
-  name: "Basic",
+  name: "Vue-3Carousel",
   components: {
     Carousel,
     Slide,
@@ -29,12 +37,13 @@ export default defineComponent({
 </script>
 
 <style>
+.container {
+  width: 500px;
+}
+
 .carousel__item {
   min-height: 200px;
   width: 100%;
-  background-color: rgb(28, 196, 28);
-  color: white;
-  font-size: 20px;
   border-radius: 8px;
   display: flex;
   justify-content: center;
